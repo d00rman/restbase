@@ -22,6 +22,7 @@ function generateTests(options) {
     });
 
     it('should return valid revision info', function() {
+        console.log('about to issue a request for: ' + server.config.bucketURL + '/revision/' + options.revOk);
         return preq.get({ uri: server.config.bucketURL + '/revision/' + options.revOk })
         .then(function(res) {
             assert.deepEqual(res.status, 200);
