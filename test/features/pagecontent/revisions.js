@@ -18,7 +18,7 @@ function generateTests(options) {
     before(function () {
         apiRequestTemplate.uri = 'https://' + options.apiDomain + '/w/api.php';
         apiRequestTemplate.headers.host = options.apiDomain;
-        return server.start();
+        return server.start(options);
     });
 
     it('should return valid revision info', function() {

@@ -230,6 +230,7 @@ PRS.prototype.fetchAndStoreMWRevision = function(restbase, req) {
     } else {
         apiReq.body.titles = rp.title;
     }
+    console.log('REQUESTING REV ' + rp.revision);
     return restbase.post(apiReq)
     .then(function(apiRes) {
         var items = apiRes.body.items;
