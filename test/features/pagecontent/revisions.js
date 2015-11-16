@@ -29,6 +29,9 @@ function generateTests(options) {
             assert.deepEqual(res.body.items[0].rev, options.revOk);
             assert.deepEqual(res.body.items[0].title, 'Foobar');
             assert.deepEqual(res.body.items[0].redirect, false);
+        }, function(err) {
+            console.log("ERROR: " + JSON.stringify(err, null, 2));
+            throw err;
         });
     });
 
